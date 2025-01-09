@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define EKF_{{ suffix|upper }}_VERSION ({{ githash }})
+#define EKF_{{ suffix|upper }}_VERSION "{{ githash }}"
 
 #define EKF_{{ suffix|upper }}_N_STATES {{ lenX }}
 #define EKF_{{ suffix|upper }}_N_INPUTS {{ lenU }}
