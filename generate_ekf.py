@@ -186,10 +186,13 @@ update_code = update_code.replace('\n', '\n\t')
 #%% emit code
 
 from os import path, makedirs
+import subprocess
 from jinja2 import Environment, FileSystemLoader
 
 # set data used in templates
 data = {}
+data['githash'] = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode('ascii').strip()
+data['suffix'] = "fc"
 data['lenX'] = len(X)
 data['lenQ'] = len(W)
 data['lenU'] = len(U)
